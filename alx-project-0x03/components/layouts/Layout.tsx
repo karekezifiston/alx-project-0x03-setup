@@ -1,16 +1,12 @@
-import { ReactNode } from "react";
+import { LayoutProps } from "@/interfaces";  // ← Interface imported from centralized location
 import Footer from "./Footer";
 import Header from "./Header";
 
-interface LayoutProps {
-  children: ReactNode;
-}
-
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {  // ← Using imported interface
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main className="pt-24">{children}</main>
       <Footer />
     </>
   );
